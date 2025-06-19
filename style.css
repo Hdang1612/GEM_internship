@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  color: white;
+  padding: 3rem;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  position: sticky;
+  top: 0;
+  background: #a5ed6e;
+}
+.content__heading {
+  color: #4b4b4b;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #777;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  padding: 0.5rem 2rem;
+}
+
+.menu .active {
+  color: #fff;
+}
+
+.menu li a:hover {
+  color: #58cc02;
+  transition: all 0.2s ease-in-out;
+}
+
+.content {
+  padding: 2rem;
+  display: flex;
+  width: 100%;
+}
+
+.content .content-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  width: 18%;
+}
+
+.content .content-main {
+  justify-content: center;
+  padding: 2rem 1rem;
+  width: 60%;
+}
+
+.content .content-main .product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+  padding: 20px;
+}
+
+.content .content-main .product-item {
+  display: flex;
+  padding: 2.875rem 2.76188rem 2.72563rem 2.77375rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  border-top: 2px solid #e5e5e5;
+  border-right: 2px solid #e5e5e5;
+  border-bottom: 4px solid #e5e5e5;
+  border-left: 2px solid #e5e5e5;
+  background: #fff;
+  cursor: pointer;
+}
+
+.product-item .product-title {
+  color: #4b4b4b;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.275rem;
+  margin: 2rem 0 0.6rem 0;
+}
+
+.product-item .product-sub {
+  color: #777;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem;
+  margin: 0.6rem;
+}
+
+.content .content-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  flex-grow: 1;
+}
+
+.footer {
+  color: white;
+  background-color: #58cc02;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .footer-content {
+  width: 60%;
+  display: flex;
+  padding: 4rem 0;
+  flex-wrap: wrap;
+}
+
+.footer .footer-content .footer-col {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding: 2rem;
+}
+
+.footer-col .footer-heading {
+  color: #d7ffb8;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6625rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-col .footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li{
+  margin-bottom: 0.5rem;
+}
+
+.footer-col li a {
+  text-decoration: none;
+  color: #a5ed6e;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.375rem;
+}
+
+.footer-col li a:hover {
+  color: #d7ffb8;
+  transition: all 0.2s ease-in-out;
+}
+
+/* tablet */
+@media screen and (max-width: 1200px) {
+  .content .content-nav,
+  .content .content-sidebar {
+    visibility: hidden;
+  }
+
+  .content .content-main {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .content .content-main .product-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer .footer-content {
+    width: 80%;
+  }
+  .footer .footer-content .footer-col {
+    width: 33.33%;
+    text-align: center;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .content .content-nav,
+  .content .content-sidebar {
+    visibility: hidden;
+  }
+
+  .content .content-main {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .content .content-main .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .footer-col {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
