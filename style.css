@@ -12,6 +12,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .header {
@@ -31,24 +33,18 @@ body {
 .content__heading {
   color: #4b4b4b;
   font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
   line-height: 2.5rem;
 }
 
 .menu ul {
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .menu li a {
   text-decoration: none;
   color: #777;
   font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
   line-height: 1.25rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
@@ -62,6 +58,32 @@ body {
 .menu li a:hover {
   color: #58cc02;
   transition: all 0.2s ease-in-out;
+}
+
+.menu-hidden {
+  padding: 3rem 1rem;
+  width: 40%;
+  height: 100vh;
+  background: #58cc02;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.menu-hidden li {
+  text-align: center;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.menu-hidden li a {
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
+  display: block;
 }
 
 .content {
@@ -89,7 +111,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 1.6rem;
   width: 100%;
-  padding: 20px;
+  padding: 2rem 0;
 }
 
 .content .content-main .product-item {
@@ -99,19 +121,13 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  border-top: 2px solid #e5e5e5;
-  border-right: 2px solid #e5e5e5;
-  border-bottom: 4px solid #e5e5e5;
-  border-left: 2px solid #e5e5e5;
-  background: #fff;
   cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .product-item .product-title {
   color: #4b4b4b;
   font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
   line-height: 1.275rem;
   margin: 2rem 0 0.6rem 0;
 }
@@ -119,7 +135,6 @@ body {
 .product-item .product-sub {
   color: #777;
   font-size: 1.4rem;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.25rem;
   margin: 0.6rem;
@@ -154,11 +169,19 @@ body {
   padding: 2rem;
 }
 
+.footer .footer-content .footer-col .footer-list {
+  max-height: 10rem;
+  overflow: auto;
+}
+
+.footer .footer-content .footer-col .footer-list::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
+
 .footer-col .footer-heading {
   color: #d7ffb8;
   font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 700;
   line-height: 1.6625rem;
   margin-bottom: 0.75rem;
 }
@@ -169,7 +192,7 @@ body {
   margin: 0;
 }
 
-.footer-col li{
+.footer-col li {
   margin-bottom: 0.5rem;
 }
 
@@ -177,8 +200,6 @@ body {
   text-decoration: none;
   color: #a5ed6e;
   font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
   line-height: 1.375rem;
 }
 
@@ -212,11 +233,18 @@ body {
 }
 
 /* phone */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .content .content-nav,
-  .content .content-sidebar {
-    visibility: hidden;
+  .content .content-sidebar,
+  .menu {
+    display: none;
   }
+  .menu-icon {
+    display: block !important;
+  }
+  /* .menu-hidden {
+    display: block;
+  } */
 
   .content .content-main {
     width: 100%;
@@ -228,14 +256,26 @@ body {
   }
 
   .footer .footer-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     width: 90%;
   }
 
-  .footer-col {
+  .footer .footer-content .footer-col {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .content .content-main .product-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer .footer-content .footer-col {
     width: 100%;
     text-align: center;
-    margin-bottom: 2rem;
+  }
+  .menu-hidden {
+    width: 100%;
   }
 }
