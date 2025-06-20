@@ -3,13 +3,15 @@ const menu_hidden = document.querySelector(".menu-hidden");
 const close_menu_btn = document.querySelector(".close-menu-btn");
 menu_icon.addEventListener("click", () => {
   console.log("sdfasdfadfaf");
-  menu_hidden.style.display = "block";
+  // menu_hidden.style.display = "block";
+  menu_hidden.classList.add("menu-visible");
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
 });
 
 close_menu_btn.addEventListener("click", () => {
   console.log("sdfasdfadfaf");
-  menu_hidden.style.display = "none";
+  // menu_hidden.style.display = "none";
+  menu_hidden.classList.remove("menu-visible");
   document.getElementsByTagName("body")[0].style.overflow = "auto";
 });
 
@@ -18,7 +20,8 @@ window.addEventListener("click", (event) => {
     !menu_hidden.contains(event.target) &&
     !menu_icon.contains(event.target)
   ) {
-    menu_hidden.style.display = "none";
+    // menu_hidden.style.display = "none";
+    menu_hidden.classList.remove("menu-visible");
     document.getElementsByTagName("body")[0].style.overflow = "auto";
   }
 });

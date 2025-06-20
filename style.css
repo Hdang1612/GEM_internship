@@ -12,6 +12,7 @@ html {
 body {
   font-style: normal;
   font-weight: 700;
+  line-height: 1.25rem;
 }
 ul {
   list-style: none;
@@ -38,7 +39,6 @@ li a {
 .content__heading {
   color: #4b4b4b;
   font-size: 2rem;
-  line-height: 2.5rem;
 }
 
 .menu ul {
@@ -48,7 +48,6 @@ li a {
 .menu li a {
   color: #777;
   font-size: 2rem;
-  line-height: 1.25rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   padding: 0.5rem 2rem;
@@ -66,12 +65,18 @@ li a {
 .menu-hidden {
   padding: 3rem 1rem;
   width: 40%;
-  /* left: -40; */
+  left: -40%;
   height: 100vh;
   background: #58cc02;
   position: absolute;
   top: 0;
-  display: none;
+  transition: all 0.3s ease-in-out;
+  /* display: none; */
+}
+
+.menu-visible {
+  left: 0 !important;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-hidden li {
@@ -130,7 +135,6 @@ li a {
 .product-item .product-title {
   color: #4b4b4b;
   font-size: 2rem;
-  line-height: 1.275rem;
   margin: 2rem 0 0.6rem 0;
 }
 
@@ -138,7 +142,6 @@ li a {
   color: #777;
   font-size: 1.4rem;
   font-weight: 500;
-  line-height: 1.25rem;
   margin: 0.6rem;
 }
 
@@ -184,7 +187,6 @@ li a {
 .footer-col .footer-heading {
   color: #d7ffb8;
   font-size: 1.8rem;
-  line-height: 1.6625rem;
   margin-bottom: 0.75rem;
 }
 
@@ -195,7 +197,6 @@ li a {
 .footer-col li a {
   color: #a5ed6e;
   font-size: 1rem;
-  line-height: 1.375rem;
 }
 
 .footer-col li a:hover {
@@ -203,7 +204,7 @@ li a {
   transition: all 0.2s ease-in-out;
 }
 
-/* tablet */
+/* large screen */
 @media screen and (max-width: 1200px) {
   .content .content-nav,
   .content .content-sidebar {
@@ -226,7 +227,7 @@ li a {
     text-align: center;
   }
 }
-
+/* tablet */
 @media screen and (max-width: 700px) {
   .content .content-nav,
   .content .content-sidebar,
@@ -269,5 +270,6 @@ li a {
   }
   .menu-hidden {
     width: 100%;
+    left: -100%;
   }
 }
